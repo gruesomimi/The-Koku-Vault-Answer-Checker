@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔐 The Koku Vault · Answer Checker</title>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(120deg, #EFE9FF, #E6F7FF);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 35px 45px;
+        border-radius: 25px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        text-align: center;
+        max-width: 420px;
+        width: 90%;
+    }
+
+    h1 {
+        color: #5B4B8A;
+        font-size: 26px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    p {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    input[type="number"] {
+        padding: 15px;
+        font-size: 18px;
+        width: 80%;
+        border-radius: 15px;
+        border: 3px solid #B9AEFF;
+        outline: none;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 16px;
+        background-color: #EFE9FF;
+        border: 3px solid #B9AEFF;
+        border-radius: 18px;
+        cursor: pointer;
+        transition: 0.2s;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #DED6FF;
+    }
+
+    .answer-box {
+        margin-top: 25px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #F5F2FF;
+        font-weight: bold;
+        font-size: 20px;
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s ease-in;
+    }
+
+    .visible {
+        opacity: 1;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🔐 The Koku Vault</h1>
+    <p>Enter question number (1–20) to unlock the answer ✨</p>
+
+    <input type="number" id="qnum" placeholder="Question number">
+    <br>
+    <button onclick="checkAnswer()">Unlock Answer 🔓</button>
+
+    <div class="answer-box" id="answerBox"></div>
+</div>
+
+<script>
+const answers = {
+    1: "✅ Answer: B",
+    2: "✅ Answer: B",
+    3: "✅ Answer: C",
+    4: "✅ Answer: C",
+    5: "✅ Answer: C",
+    6: "✅ Answer: A",
+    7: "✅ Answer: C",
+    8: "✅ Answer: B",
+    9: "✅ Answer: B",
+    10: "✅ Answer: C",
+    11: "✅ Answer: C",
+    12: "✅ Answer: D",
+    13: "✅ Answer: C",
+    14: "✅ Answer: B",
+    15: "✅ Answer: B",
+    16: "✅ Answer: C",
+    17: "✅ Answer: A",
+    18: "✅ Answer: C",
+    19: "✅ Answer: B",
+    20: "✅ Answer: A"
+};
+
+function checkAnswer() {
+    const q = document.getElementById("qnum").value;
+    const box = document.getElementById("answerBox");
+
+    if (answers[q]) {
+        box.textContent = answers[q];
+        box.classList.add("visible");
+    } else {
+        box.textContent = "❌ Invalid question number";
+        box.classList.add("visible");
+    }
+}
+</script>
+
+</body>
+</html>
